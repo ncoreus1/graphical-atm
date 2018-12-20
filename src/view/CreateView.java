@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import org.jdatepicker.JDatePicker;
 
 import controller.ViewManager;
 
@@ -40,9 +43,19 @@ public class CreateView extends JPanel implements ActionListener {
 		// this is a placeholder for this view and should be removed once you start
 		// building the CreateView.
 		
-		this.add(new javax.swing.JLabel("CreateView", javax.swing.SwingConstants.CENTER));
+		this.add(new javax.swing.JLabel("New Account", javax.swing.SwingConstants.CENTER));
 		
-		// TODO
+		JTextField firstname = new JTextField();
+		firstname.addActionListener(this);
+		firstname.setVisible(true);
+		
+		JTextField lastname = new JTextField();
+		lastname.addActionListener(this);
+		
+		JDatePicker datePicker = new JDatePicker();
+		 
+		CreateView.add(datePicker);
+
 		//
 		// this is where you should build the CreateView (i.e., all the components that
 		// allow the user to enter his or her information and create a new account).
@@ -51,6 +64,7 @@ public class CreateView extends JPanel implements ActionListener {
 		// positioning your components.
 	}
 	
+
 	/*
 	 * CreateView is not designed to be serialized, and attempts to serialize will throw an IOException.
 	 * 
