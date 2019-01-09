@@ -1,4 +1,4 @@
-Thu Dec 20 14:15:18 EST 2018 Thread[AWT-EventQueue-0,6,main] Cleanup action starting
+Wed Jan 09 14:36:17 EST 2019 Thread[AWT-EventQueue-0,6,main] Cleanup action starting
 java.sql.SQLException: Failed to start database 'atm' with class loader sun.misc.Launcher$AppClassLoader@2a139a55, see the next exception for details.
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
