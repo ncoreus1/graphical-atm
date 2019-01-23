@@ -2,9 +2,12 @@ package view;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -19,6 +22,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import controller.ViewManager;
+import view.LoginView;
 
 @SuppressWarnings("serial")
 public class LoginView extends JPanel implements ActionListener {
@@ -27,7 +31,7 @@ public class LoginView extends JPanel implements ActionListener {
 	private JButton loginButton;			// button that redirects users to the HomeView (if credentials match)
 	private JButton createButton;			// button that directs users to the CreateView
 	private JButton powerButton;			// button that powers off the ATM
-	private JTextField accountField;		// textfield where the user enters his or her account number
+	public JTextField accountField;			// textfield where the user enters his or her account number
 	private JPasswordField pinField;		// textfield where the user enters his or her PIN
 	private JLabel errorMessageLabel;		// label for potential error messages
 	
@@ -189,7 +193,9 @@ public class LoginView extends JPanel implements ActionListener {
 		Object source = e.getSource();
 		
 		if (source.equals(loginButton)) {
-			manager.login(accountField.getText(), pinField.getPassword());
+			manager.login(accountField.getText(), pinField.getPassword());;
+			accountField.setText("");
+			pinField.setText("");
 		} else if (source.equals(createButton)) {
 			manager.switchTo(ATM.CREATE_VIEW);
 		} else if (source.equals(powerButton)) {
